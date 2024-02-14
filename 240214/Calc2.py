@@ -31,6 +31,8 @@ for i in range(N):
         top += 1
     else:
         postfix.append(numList[i])
+while stack :       # 끝난 후 스택에 남은 연산자들을 뒤에 추가해주자!
+    postfix += stack.pop()
 print(stack)
 print(''.join(postfix))
 
