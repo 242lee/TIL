@@ -1,4 +1,5 @@
-# from pprint import pprint as print
+# while 문이 끝나지 않는 문제가 있음.. 다시 풀어볼게..
+
 N = 10
 testcase = int(input())
 laddermap = [list(input()) for _ in range(N)]
