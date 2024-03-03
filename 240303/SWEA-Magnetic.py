@@ -15,3 +15,22 @@ for test_case in range(1, T + 1):
                 prev = n
     print(f'#{test_case} {ans}')
 '''
+for tc in range(1, 11):
+    N = int(input())
+    magnetic = [list(map(int, input().split())) for _ in range(N)]
+    check = []
+    for j in range(N):
+        tmp = []
+        check.append(tmp)
+        for i in range(N):
+            tmp.append(int(magnetic[i][j]))
+    cnt = 0
+    for lst in check:
+        pre = 0
+        for p in lst:
+            if p:
+                if p == 2 and pre == 1:
+                    cnt += 1
+                pre = p
+    print(f'#{tc} {cnt}')
+# print(cnt)
