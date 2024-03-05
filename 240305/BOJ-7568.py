@@ -8,12 +8,17 @@
 '''
 N = int(input())
 lst = []
-rank = [0] * N
 for _ in range(N):
     lst.append(list(map(int, input().split())))
-print(lst)
 
-# lst.sort(key = lambda x : (x[0], x[1]), reverse= True)
-# print(lst)
+for a in lst:
+    rank = 1
+    for b in lst:
+        if a[0] < b[0] and a[1] < b[1]:
+            rank +=1
+    print(rank, end = ' ')
 
-
+'''
+a랑 b를 설정해. a가 나, b가 비교대상
+키, 몸무게가 나보다 큰 항목이 있으면 rank가 내려가 (+=1)
+'''
