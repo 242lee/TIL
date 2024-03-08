@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Position</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 1500px;
+    }
+
+    .container {
+      position: relative;
+      height: 300px;
+      width: 300px;
+      border: 1px solid black;
+    }
+
+    .box {
+      height: 100px;
+      width: 100px;
+      border: 1px solid black;
+    }
+
+    .static {
+      background-color: lightcoral;
+      /* static - 기본값, 아무 변화없음 */
+      /* position: absolute; */
+    }
+
+    .absolute {
+      background-color: lightgreen;
+      /* static 이 아닌 부모를 찾아 - 지금은 container
+      이제 absolute의 시작점 == container의 시작점 */
+      position: absolute;
+      top: 100px;
+      left: 100px;
+    }
+
+    .relative {
+      background-color: lightblue;
+      /* 상대위치 기준, 상대 = 본인의 static */
+      position: relative;
+      bottom: 100px;
+      left: 100px;
+    }
+
+    .fixed {
+      background-color: gray;
+      /* fixed도 집을 나가, 고정 값을 줘 그러면 화면에서 그 자리에 고정됨 */
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box static">Static</div>
+    <div class="box absolute">Absolute</div>
+    <div class="box relative">Relative</div>
+    <div class="box fixed">Fixed</div>
+  </div>
+</body>
+
+</html>

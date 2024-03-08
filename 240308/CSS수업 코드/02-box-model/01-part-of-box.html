@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 기본으로는 contecnt-box로 되어 있음
+    아래처럼 하면 전체 상자 크기가 기본이 됨 */
+    * {
+      box-sizing: border-box;
+    }
+    
+    .box1 {
+      width: 200px;
+      padding-top: 25px;
+      padding-left: 25px;
+      padding-bottom: 25px;
+      margin-left: 25px;
+      margin-top: 50px;
+      border-width: 3px;
+      border-style: solid;
+      border-color: rgb(65, 65, 199);
+    }
+
+    /* 단축형으로 작성 */
+    .box2 {
+      width: 200px;
+      padding: 25px 50px;
+      margin: 25px auto;
+      border: 3px dotted rgb(255, 110, 154);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">box1</div>
+  <div class="box2">box2</div>
+</body>
+
+</html>
