@@ -1,0 +1,21 @@
+.topline {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    background-color: rgb(95, 94, 94);
+    font-size: larger;
+    width: 100%;
+}
+
+.larger {
+    font-size: larger;
+    color: white;
+}
+
+@media (min-width: 1400px) {
+    header {
+        display: flex;
+        justify-items: center;
+        width: 1320px
+    }
+}
