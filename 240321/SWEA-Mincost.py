@@ -1,5 +1,5 @@
 from collections import deque
-
+# 최소비용 구하기
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
