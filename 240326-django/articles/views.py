@@ -9,6 +9,7 @@ def index(request):
     }
     return render(request, 'articles/index.html', context)
 
+# 입력된 값의 디테일 페이지로 가
 def detail(request, pk):
     article = Article.objects.get(pk = pk)
     context = {
@@ -19,6 +20,7 @@ def detail(request, pk):
 def new(request):
     return render(request, 'articles/new.html')
 
+# 새로운 정보를 생성해
 def create(request):
     # print(request.GET) # <QueryDict: {'title': ['안녕'], 'contnet': ['클레오파트라']}>
     title = request.POST.get('title')
@@ -36,6 +38,7 @@ def create(request):
 
     return redirect('articles:detail', article.pk)
 
+# 삭제해
 def delete(request, pk):
     # 삭제 하려면 조회를 먼저 해야 함
     article = Article.objects.get(pk = pk)
@@ -52,11 +55,12 @@ def edit(request, pk):
 def update(request, pk):
     article = Article.objects.get(pk = pk)
 
+    #request.POST
     title = request.POST.get('title')
     content = request.POST.get('contnet')
 
     article.title = title
     article.content = content
-    article.save()
+    article.save()    # save 필수
 
     return redirect('articles:detail', article.pk)
