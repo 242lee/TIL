@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block style %}{% endblock style %}
+
+{% block content %}
+<h1>TODOS</h1>
+
+
+<form action="{% url "todos:create" %}" method = "POST">
+    {% csrf_token %}
+    <input type="text" name = "title" placeholder = '당신의 할 일은?' required>
+    <input type="submit", value= "저 장">
+</form>
+
+<a href="{% url "todos:new" %}">새로 생성하기</a>
+
+{% comment %} todo list 전체 불러오기 {% endcomment %}
+{% for todo in todos %}
+<ul>
+    <li>
+        <p> <a href="{% url "todos:detail" todo.pk %}"> {{todo.pk}} </a> </p>
+        <form action="{% url "todos:delete" todo.pk %} " method = "POST">
+            {% csrf_token %}
+            <input type="submit" value = '삭제..'>
+        </form>
+        <form action="{% url "todos:update" todo.pk %}" method = "POST">
+            {% csrf_token %}
+            <input type="submit" value = '완료하기'>
+            
+        </form>
+        <p> Title : {{todo.title}} </p>
+        <p> Completed : {{todo.completed}} </p>
+        <hr> 
+    </li>
+</ul>
+{% endfor %}
+{% endblock content %}

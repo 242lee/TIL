@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block style %}
+    <style>
+        .container{
+            display : flex;
+            flex-direction: column;
+        }
+    </style>
+{% endblock style %}
+
+{% block content %}
+<h1>DETAIL</h1>
+<div class = 'container'>
+    <p > Title = {{ todo.title }} </p>
+    <p> 완료여부 = {{ todo.completed }} </p>
+    </p>
+</div>
+<a href="{% url "todos:index" %}">[뒤로 가기]</a>
+
+
+{% endblock content %}
+
+
